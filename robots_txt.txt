@@ -1,0 +1,50 @@
+# Hotel Dilley robots.txt
+# Allows search engines to crawl and index the entire site
+
+User-agent: *
+Allow: /
+
+# Allow all pages for better SEO visibility
+Allow: /furnished-apartments-dilley-tx
+Allow: /hotel-rooms-dilley
+Allow: /month-to-month-apartments-dilley
+Allow: /all-utilities-included-dilley-tx
+Allow: /oilfield-housing-dilley
+Allow: /extended-stay-dilley-texas
+Allow: /blog
+
+# Block admin and private directories
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-content/uploads/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /cache/
+
+# Block duplicate content and search parameters
+Disallow: /*?sort=
+Disallow: /*?filter=
+Disallow: /*?page=
+Disallow: /*?search=
+
+# Allow CSS, JS, and images for proper rendering
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /assets/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.gif
+Allow: /*.webp
+Allow: /*.svg
+Allow: /*.ico
+
+# Sitemap location
+Sitemap: https://hoteldilley.com/sitemap.xml
+Sitemap: https://hoteldilley.com/sitemap-images.xml
+
+# Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1

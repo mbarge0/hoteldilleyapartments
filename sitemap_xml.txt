@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- Homepage -->
+    <url>
+        <loc>https://hoteldilley.com/</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://hoteldilley.com/images/hotel-dilley-exterior.jpg</image:loc>
+            <image:caption>Hotel Dilley exterior view on Main Street in Dilley, TX</image:caption>
+            <image:title>Hotel Dilley - Oil Worker Housing</image:title>
+        </image:image>
+    </url>
+    
+    <!-- Furnished Apartments Page -->
+    <url>
+        <loc>https://hoteldilley.com/furnished-apartments-dilley-tx</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://hoteldilley.com/images/furnished-apartment-kitchenette.jpg</image:loc>
+            <image:caption>Furnished efficiency apartment with full kitchenette at Hotel Dilley</image:caption>
+            <image:title>Furnished Apartments Dilley TX</image:title>
+        </image:image>
+    </url>
+    
+    <!-- Hotel Rooms Page -->
+    <url>
+        <loc>https://hoteldilley.com/hotel-rooms-dilley</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://hoteldilley.com/images/hotel-room-king-bed.jpg</image:loc>
+            <image:caption>King hotel room with work desk at Hotel Dilley</image:caption>
+            <image:title>Hotel Rooms Dilley TX</image:title>
+        </image:image>
+    </url>
+    
+    <!-- Month-to-Month Apartments Page -->
+    <url>
+        <loc>https://hoteldilley.com/month-to-month-apartments-dilley</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://hoteldilley.com/images/month-to-month-apartment.jpg</image:loc>
+            <image:caption>Month-to-month furnished apartment with flexible lease terms</image:caption>
+            <image:title>Month-to-Month Apartments Dilley TX</image:title>
+        </image:image>
+    </url>
+    
+    <!-- All Utilities Included Page -->
+    <url>
+        <loc>https://hoteldilley.com/all-utilities-included-dilley-tx</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://hoteldilley.com/images/all-inclusive-apartment.jpg</image:loc>
+            <image:caption>All utilities included apartment - no separate bills</image:caption>
+            <image:title>All Utilities Included Dilley TX</image:title>
+        </image:image>
+    </url>
+    
+    <!-- Oilfield Housing Page -->
+    <url>
+        <loc>https://hoteldilley.com/oilfield-housing-dilley</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://hoteldilley.com/images/oilfield-worker-housing.jpg</image:loc>
+            <image:caption>Eagle Ford Shale oil worker housing at Hotel Dilley</image:caption>
+            <image:title>Oilfield Housing Dilley TX</image:title>
+        </image:image>
+    </url>
+    
+    <!-- Extended Stay Page -->
+    <url>
+        <loc>https://hoteldilley.com/extended-stay-dilley-texas</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://hoteldilley.com/images/extended-stay-room.jpg</image:loc>
+            <image:caption>Extended stay accommodations for contractors in Dilley, TX</image:caption>
+            <image:title>Extended Stay Dilley Texas</image:title>
+        </image:image>
+    </url>
+    
+    <!-- Blog Section -->
+    <url>
+        <loc>https://hoteldilley.com/blog</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Blog Articles -->
+    <url>
+        <loc>https://hoteldilley.com/blog/best-areas-stay-dilley-oil-workers</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://hoteldilley.com/blog/cost-living-guide-dilley-contractors</loc>
+        <lastmod>2024-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://hoteldilley.com/blog/eagle-ford-shale-housing-options-compared</loc>
+        <lastmod>2024-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://hoteldilley.com/blog/month-to-month-vs-long-term-leases</loc>
+        <lastmod>2023-12-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- About/Contact Pages -->
+    <url>
+        <loc>https://hoteldilley.com/about</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://hoteldilley.com/contact</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://hoteldilley.com/amenities</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://hoteldilley.com/location</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://hoteldilley.com/reviews</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+</urlset>
