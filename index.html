@@ -1640,11 +1640,17 @@ async function submitToHubSpot(formData) {
             { name: 'email', value: formData.get('email') || '' },
             { name: 'phone', value: formData.get('phone') || '' },
             { name: 'company', value: formData.get('company') || '' },
+            
+            { name: 'interest', value: `
+${formData.get('interest') || 'Not specified'}
+            `.trim() },
+            
+            { name: 'timeline', value: `
+${formData.get('timeline') || 'Not specified'}
+            `.trim() },
+            
             { name: 'message', value: `
-Interest: ${formData.get('interest') || 'Not specified'}
-Timeline: ${formData.get('timeline') || 'Not specified'}
-Message: ${formData.get('message') || 'No additional message'}
-Source: Hotel Dilley Website Contact Form
+${formData.get('message') || 'No additional message'}
             `.trim() }
         ]
     };
