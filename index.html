@@ -1624,6 +1624,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// REPLACE your submitToHubSpot function with this corrected version:
+
 async function submitToHubSpot(formData) {
     const portalId = '46909915';
     const formId = '55bef10a-e524-451a-9884-034f8addf358';
@@ -1639,18 +1641,16 @@ async function submitToHubSpot(formData) {
             { name: 'lastname', value: lastName },
             { name: 'email', value: formData.get('email') || '' },
             { name: 'phone', value: formData.get('phone') || '' },
+            
+            // Use standard HubSpot field names
             { name: 'company', value: formData.get('company') || '' },
             
-            { name: 'interest', value: `
-${formData.get('interest') || 'Not specified'}
-            `.trim() },
-            
-            { name: 'timeline', value: `
-${formData.get('timeline') || 'Not specified'}
-            `.trim() },
-            
+            // Combine custom fields into the message field since they don't exist in HubSpot
             { name: 'message', value: `
-${formData.get('message') || 'No additional message'}
+ACCOMMODATION INTEREST: ${formData.get('interest') || 'Not specified'}
+PROJECT TIMELINE: ${formData.get('timeline') || 'Not specified'}
+MESSAGE: ${formData.get('message') || 'No additional message'}
+SOURCE: Hotel Dilley Website Contact Form
             `.trim() }
         ]
     };
