@@ -1703,7 +1703,7 @@ async function submitToHubSpotDirect(formData) {
 
 async function submitToMakeCom(formData) {
     // Use your server proxy instead of direct Make.com webhook
-    const webhookUrl = 'https://hoteldilley.com/webhook-proxy.php';
+	const webhookUrl = 'https://hoteldilley.com/.netlify/functions/webhook-proxy';
     
     const name = formData.get('name') || '';
     const nameParts = name.split(' ');
