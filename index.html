@@ -1459,7 +1459,7 @@
                     
                     <div class="form-group">
                         <label>I'm interested in... *</label>
-                        <select name="interest" required>
+                        <select name="accommodation_interest" required>
                             <option value="">Please select...</option>
                             <option value="furnished-monthly">Furnished Apartments (Month-to-Month)</option>
                             <option value="furnished-longterm">Furnished Apartments (Long-term)</option>
@@ -1472,7 +1472,7 @@
                     
                     <div class="form-group">
                         <label>Project Timeline</label>
-                        <select name="timeline">
+                        <select name="project_timeline">
                             <option value="">Select timeline...</option>
                             <option value="immediate">Need immediately</option>
                             <option value="1-2-weeks">1-2 weeks</option>
@@ -1645,13 +1645,11 @@ async function submitToHubSpot(formData) {
             // Use standard HubSpot field names
             { name: 'company', value: formData.get('company') || '' },
             
+            { name: 'accommodation_interest', value: formData.get('accommodation_interest') || '' },
+            { name: 'project_timeline', value: formData.get('project_timeline') || '' },
+            
             // Combine custom fields into the message field since they don't exist in HubSpot
-            { name: 'message', value: `
-ACCOMMODATION INTEREST: ${formData.get('interest') || 'Not specified'}
-PROJECT TIMELINE: ${formData.get('timeline') || 'Not specified'}
-MESSAGE: ${formData.get('message') || 'No additional message'}
-SOURCE: Hotel Dilley Website Contact Form
-            `.trim() }
+            { name: 'message', value: formData.get('message') || '' },
         ]
     };
     
