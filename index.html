@@ -1702,8 +1702,8 @@ async function submitToHubSpotDirect(formData) {
 }
 
 async function submitToMakeCom(formData) {
-    // Your Make.com webhook URL (get this from Make.com)
-    const webhookUrl = 'https://hook.us2.make.com/3hr0u2462nx4bnpbp859meyserinmays';
+    // Use your server proxy instead of direct Make.com webhook
+    const webhookUrl = 'https://hoteldilley.com/webhook-proxy.php';
     
     const name = formData.get('name') || '';
     const nameParts = name.split(' ');
@@ -1724,7 +1724,7 @@ async function submitToMakeCom(formData) {
         project_timeline: formData.get('timeline') || '',
         message: formData.get('message') || '',
         
-        // Lead scoring data
+        // Lead scoring
         lead_score: calculateLeadScore(formData),
         lead_priority: getLeadPriority(formData),
         
@@ -1732,14 +1732,18 @@ async function submitToMakeCom(formData) {
         source: 'Hotel Dilley Website',
         source_detail: 'Contact Form',
         page_url: window.location.href,
-        user_agent: navigator.userAgent,
         timestamp: new Date().toISOString(),
+        referrer: document.referrer || 'Direct',
         
         // For SMS notifications
-        notification_message: createNotificationMessage(formData)
+        notification_message: createNotificationMessage(formData),
+        
+        // Additional data for Make.com processing
+        ip_address: '', // Will be populated by server
+        user_agent: navigator.userAgent
     };
     
-    console.log('📤 Sending to Make.com:', webhookData);
+    console.log('📤 Sending to server proxy:', webhookData);
     
     try {
         const response = await fetch(webhookUrl, {
@@ -1751,15 +1755,16 @@ async function submitToMakeCom(formData) {
         });
         
         if (response.ok) {
-            console.log('✅ Make.com webhook successful!');
+            const result = await response.json();
+            console.log('✅ Server proxy successful:', result);
             return true;
         } else {
             const errorText = await response.text();
-            console.error('❌ Make.com webhook error:', response.status, errorText);
+            console.log('⚠️ Server proxy failed:', response.status, errorText);
             return false;
         }
     } catch (error) {
-        console.error('❌ Network error:', error);
+        console.log('⚠️ Server proxy error:', error.message);
         return false;
     }
 }
