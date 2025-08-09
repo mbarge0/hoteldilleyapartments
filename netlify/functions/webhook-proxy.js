@@ -42,7 +42,7 @@ exports.handler = async (event, context) => {
     }
 
     // Your Make.com webhook URL - UPDATE THIS
-    const makeWebhookUrl = 'https://hook.us2.make.com/YOUR_WEBHOOK_ID_HERE';
+    const makeWebhookUrl = 'https://hook.us2.make.com/3hr0u2462nx4bnpbp859meyserinmays';
     
     // Forward to Make.com
     const response = await fetch(makeWebhookUrl, {
