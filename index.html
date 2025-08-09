@@ -1627,6 +1627,27 @@ document.addEventListener('DOMContentLoaded', function() {
 // REPLACE your submitToHubSpot function with this corrected version:
 
 async function submitToHubSpot(formData) {
+    console.log('📝 Starting dual submission...');
+    
+    // Send to both simultaneously
+    const [hubspotResult, makeResult] = await Promise.allSettled([
+        submitToHubSpotDirect(formData),
+        submitToMakeCom(formData)
+    ]);
+    
+    // Check results
+    const hubspotSuccess = hubspotResult.status === 'fulfilled' && hubspotResult.value;
+    const makeSuccess = makeResult.status === 'fulfilled' && makeResult.value;
+    
+    console.log('📊 Results:');
+    console.log('HubSpot:', hubspotSuccess ? '✅ Success' : '❌ Failed');
+    console.log('Make.com:', makeSuccess ? '✅ Success' : '❌ Failed');
+    
+    // Return true if at least one succeeded
+    return hubspotSuccess || makeSuccess;
+}
+
+async function submitToHubSpotDirect(formData) {
     const portalId = '46909915';
     const formId = '55bef10a-e524-451a-9884-034f8addf358';
     
@@ -1678,6 +1699,128 @@ async function submitToHubSpot(formData) {
         console.error('❌ Network error:', error);
         return false;
     }
+}
+
+async function submitToMakeCom(formData) {
+    // Your Make.com webhook URL (get this from Make.com)
+    const webhookUrl = 'https://hook.us1.make.com/94ueeaka93vb0aifqweai46gnf0zho81';
+    
+    const name = formData.get('name') || '';
+    const nameParts = name.split(' ');
+    const firstName = nameParts[0] || '';
+    const lastName = nameParts.slice(1).join(' ') || '';
+    
+    const webhookData = {
+        // Contact information
+        first_name: firstName,
+        last_name: lastName,
+        full_name: name,
+        email: formData.get('email') || '',
+        phone: formData.get('phone') || '',
+        company: formData.get('company') || '',
+        
+        // Lead qualification
+        accommodation_interest: formData.get('interest') || '',
+        project_timeline: formData.get('timeline') || '',
+        message: formData.get('message') || '',
+        
+        // Lead scoring data
+        lead_score: calculateLeadScore(formData),
+        lead_priority: getLeadPriority(formData),
+        
+        // Metadata
+        source: 'Hotel Dilley Website',
+        source_detail: 'Contact Form',
+        page_url: window.location.href,
+        user_agent: navigator.userAgent,
+        timestamp: new Date().toISOString(),
+        
+        // For SMS notifications
+        notification_message: createNotificationMessage(formData)
+    };
+    
+    console.log('📤 Sending to Make.com:', webhookData);
+    
+    try {
+        const response = await fetch(webhookUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(webhookData)
+        });
+        
+        if (response.ok) {
+            console.log('✅ Make.com webhook successful!');
+            return true;
+        } else {
+            const errorText = await response.text();
+            console.error('❌ Make.com webhook error:', response.status, errorText);
+            return false;
+        }
+    } catch (error) {
+        console.error('❌ Network error:', error);
+        return false;
+    }
+}
+
+// Helper functions for lead scoring and notifications
+function calculateLeadScore(formData) {
+    let score = 50; // Base score
+    
+    const interest = formData.get('interest');
+    const timeline = formData.get('timeline');
+    const company = formData.get('company');
+    
+    // Score by accommodation type
+    if (interest === 'corporate-housing') score += 30;
+    else if (interest === 'furnished-longterm') score += 25;
+    else if (interest === 'furnished-monthly') score += 20;
+    else if (interest === 'hotel-weekly') score += 15;
+    else if (interest === 'hotel-nightly') score += 10;
+    
+    // Score by timeline urgency
+    if (timeline === 'immediate') score += 25;
+    else if (timeline === '1-2-weeks') score += 20;
+    else if (timeline === '1-month') score += 15;
+    else if (timeline === '2-3-months') score += 10;
+    
+    // Score by company presence
+    if (company && company.trim() !== '') score += 15;
+    
+    return Math.min(score, 100); // Cap at 100
+}
+
+function getLeadPriority(formData) {
+    const score = calculateLeadScore(formData);
+    const timeline = formData.get('timeline');
+    const interest = formData.get('interest');
+    
+    if (score >= 80 || timeline === 'immediate' || interest === 'corporate-housing') {
+        return 'HIGH';
+    } else if (score >= 60) {
+        return 'MEDIUM';
+    } else {
+        return 'LOW';
+    }
+}
+
+function createNotificationMessage(formData) {
+    const priority = getLeadPriority(formData);
+    const priorityEmoji = priority === 'HIGH' ? '🔥' : priority === 'MEDIUM' ? '⚡' : '📝';
+    
+    return `${priorityEmoji} ${priority} PRIORITY LEAD - Hotel Dilley
+
+👤 ${formData.get('name')}
+📧 ${formData.get('email')}
+📱 ${formData.get('phone')}
+🏢 ${formData.get('company') || 'No company'}
+
+🏠 Interest: ${formData.get('interest')}
+⏰ Timeline: ${formData.get('timeline')}
+💬 Message: ${formData.get('message')}
+
+🕐 Submitted: ${new Date().toLocaleString()}`;
 }
 
 // Other page functionality
