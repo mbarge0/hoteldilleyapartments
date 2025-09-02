@@ -61,6 +61,261 @@
     </script>
     
     <style>
+    
+    .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 100px 0 50px;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg, 
+        rgba(22, 22, 22, 0.2) 0%, /* Even lighter */
+        rgba(166, 135, 104, 0.1) 100% /* Even lighter */
+    );
+    z-index: 2;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 3;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+}
+
+.hero-content2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text {
+    animation: slideInLeft 1s ease-out;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(166, 135, 104, 0.2);
+    border: 1px solid var(--primary-brown);
+    border-radius: 25px;
+    padding: 8px 20px;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--primary-brown);
+    backdrop-filter: blur(10px);
+}
+
+.hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: white;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-text .subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+    line-height: 1.5;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.highlight {
+    background: linear-gradient(120deg, var(--primary-brown) 0%, var(--accent-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.features-list {
+    list-style: none;
+    margin: 35px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.features-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+.features-list .icon {
+    width: 32px;
+    height: 32px;
+    background: var(--primary-brown);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: white;
+    flex-shrink: 0;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 18px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-primary {
+    background: var(--primary-brown);
+    color: white;
+    box-shadow: 0 8px 25px rgba(166, 135, 104, 0.3);
+}
+
+.btn-primary:hover {
+    background: var(--dark-charcoal);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(22, 22, 22, 0.4);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid var(--primary-brown);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-brown);
+    color: white;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 50px;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .features-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        justify-content: center;
+    }
+    
+    .dual-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-toggle {
+        display: block;
+    }
+    
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+    
+    .contact-form {
+        padding: 30px;
+    }
+}
+    
         :root {
             --primary-brown: #a68768;
             --dark-charcoal: #161616;
@@ -177,19 +432,7 @@
             width: 100%;
         }
         
-        .hero {
-            min-height: 100vh;
-            background: linear-gradient(135deg, 
-                rgba(22, 22, 22, 0.7) 0%, 
-                rgba(166, 135, 104, 0.3) 100%), 
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23f2f2f2" width="1200" height="800"/><circle cx="200" cy="200" r="100" fill="%23a68768" opacity="0.1"/><circle cx="800" cy="400" r="150" fill="%23161616" opacity="0.05"/></svg>');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            position: relative;
-            padding: 100px 0 50px;
-        }
+
         
         .hero::before {
             content: '';
@@ -202,14 +445,7 @@
             background-size: 200px;
         }
         
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
+
         
         .hero-text {
             animation: slideInLeft 1s ease-out;
@@ -234,7 +470,7 @@
             color: var(--primary-brown);
         }
         
-        .hero-text h1 {
+        .hero-text h2 {
             font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
             font-weight: 700;
@@ -290,12 +526,15 @@
             flex-shrink: 0;
         }
         
+
+        
         .cta-buttons {
-            display: flex;
-            gap: 20px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    justify-content: center; /* Add this line */
+}
         
         .btn {
             padding: 18px 35px;
@@ -330,29 +569,31 @@
             left: 100%;
         }
         
-        .btn-primary {
-            background: var(--primary-brown);
-            color: white;
-            box-shadow: 0 8px 25px rgba(166, 135, 104, 0.3);
-        }
-        
-        .btn-primary:hover {
-            background: var(--dark-charcoal);
-            transform: translateY(-2px);
-            box-shadow: 0 12px 35px rgba(22, 22, 22, 0.4);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--dark-charcoal);
-            border: 2px solid var(--primary-brown);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--primary-brown);
-            color: white;
-            transform: translateY(-2px);
-        }
+.btn-primary {
+    background: white;
+    color: var(--dark-charcoal);
+    border: 2px solid var(--primary-brown);
+    box-shadow: 0 8px 25px rgba(166, 135, 104, 0.3);
+}
+
+.btn-primary:hover {
+    background: var(--primary-brown);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(166, 135, 104, 0.4);
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--dark-charcoal);
+    border: 2px solid var(--primary-brown);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-brown);
+    color: white;
+    transform: translateY(-2px);
+}
         
         .hero-visual {
             position: relative;
@@ -380,7 +621,7 @@
         .apartment-image {
             width: 100%;
             height: 450px;
-            background: url('https://res.cloudinary.com/dvrzgytje/image/upload/v1754511130/kitchenette5_moqrqv.jpg') center/cover;
+            background: url('https://res.cloudinary.com/dvrzgytje/image/upload/v1756825484/Kitchenette_mockup_107_q0hl7x.jpg') center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -934,6 +1175,79 @@
             background: var(--dark-charcoal);
             transform: translateY(-3px);
         }
+        
+        .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.popup-overlay.show {
+    display: flex;
+}
+
+.popup-content {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: popupSlideIn 0.3s ease-out;
+}
+
+@keyframes popupSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.popup-header {
+    margin-bottom: 20px;
+}
+
+.popup-header i {
+    font-size: 3rem;
+    color: #28a745;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.popup-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--dark-charcoal);
+    margin: 0;
+}
+
+.popup-body {
+    margin-bottom: 30px;
+}
+
+.popup-body p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.popup-footer button {
+    min-width: 120px;
+}
     </style>
 </head>
 <body>
@@ -965,16 +1279,45 @@
             </div>
         </nav>
     </header>
+    
+<!-- Hero Section with Property Video Background -->
+<section class="hero">
+    <div class="video-container">
+        <video autoplay muted loop playsinline>
+            <source src="https://res.cloudinary.com/dvrzgytje/video/upload/v1756825299/Hotel_Dilley_Website_Video9_ete7lf.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Your Home Away From Home in <span class="highlight">South Texas</span></h1>
+                
+                <div class="cta-buttons">
+                    <a href="#accommodations" class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                        Discover More
+                    </a>
+                    <a href="tel:+8302712377" class="btn btn-secondary">
+                        <i class="fas fa-phone"></i>
+                        Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <section class="hero">
+        <!-- Property Photos Hero Gallery -->
+        <section style="padding: 3rem 0; background: var(--background-gray);" id="property-showcase">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content2">
                 <div class="hero-text">
                     <div class="hero-badge">
                         <i class="fas fa-star"></i>
                         4.8★ Rated on Google
                     </div>
-                    <h1>Your Home Away From Home in <span class="highlight">South Texas</span></h1>
+                    <h2>Your Home Away From Home in <span class="highlight">South Texas</span></h1>
                     <p class="subtitle">Furnished efficiency apartments with kitchenettes and traditional hotel rooms. Perfect for oil field workers, contractors, and extended stays in Dilley, TX</p>
                     
                     <ul class="features-list">
@@ -1019,7 +1362,6 @@
                 <div class="hero-visual">
                     <div class="apartment-showcase">
                         <div class="apartment-image">
-                            <i class="fas fa-building"></i>
                             <div class="floating-badges">
                                 <div class="floating-badge">Move-in Ready</div>
                                 <div class="floating-badge">All Inclusive</div>
@@ -1424,7 +1766,8 @@
             
             <div class="contact-form">
                     <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 25px; color: var(--dark-charcoal);">Send Us a Message</h3>
-                    <form id="contactForm">
+<form id="contactForm" name="contact" method="POST" data-netlify="true">
+<input type="hidden" name="form-name" value="contact" />
                         <div class="form-group">
                             <label for="fullName">Full Name *</label>
                             <input type="text" id="fullName" name="fullName" required>
@@ -1538,85 +1881,74 @@
     <i class="fas fa-arrow-up"></i>
 </a>
 
-    <script>
-        // Form submission to N8N webhook
-        document.addEventListener('DOMContentLoaded', function() {
-            const contactForm = document.getElementById('contactForm');
-            const submitBtn = document.getElementById('submitBtn');
-            const formStatus = document.getElementById('formStatus');
+// Netlify form handling with success popup
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formStatus = document.getElementById('formStatus');
+    const successPopup = document.getElementById('successPopup');
+    const closePopup = document.getElementById('closePopup');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            if (contactForm) {
-                contactForm.addEventListener('submit', async function(e) {
-                    e.preventDefault();
-                    
-                    // Show loading state
-                    submitBtn.disabled = true;
-                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Sending...</span>';
-                    formStatus.className = 'form-status loading';
-                    formStatus.style.display = 'block';
-                    formStatus.innerHTML = 'Submitting your request...';
-                    
-                    // Collect form data
-                    const formData = new FormData(this);
-                    const data = {
-                        fullName: formData.get('fullName'),
-                        email: formData.get('email'),
-                        phone: formData.get('phone') || '',
-                        company: formData.get('company') || '',
-                        interest: formData.get('interest'),
-                        timeline: formData.get('timeline') || '',
-                        message: formData.get('message') || '',
-                        leadSource: 'Website Contact Form',
-                        submittedAt: new Date().toISOString(),
-                        // Additional metadata for Airtable
-                        baseId: 'appy9YH03dUn9x3PF',
-                        tableId: 'tbl5A43drXp1oSDW3'
-                    };
-                    
-                    try {
-                        const response = await fetch('https://mattbarge.app.n8n.cloud/webhook/7176858a-0f51-45f5-8dd1-b9f0968eaf8a', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify(data)
-                        });
-                        
-                        if (response.ok) {
-                            // Success
-                            formStatus.className = 'form-status success';
-                            formStatus.innerHTML = `
-                                <div style="font-weight: 600;">
-                                    <i class="fas fa-check-circle"></i> Thank you! Your inquiry has been received.
-                                </div>
-                                <div style="font-size: 0.9rem; margin-top: 5px;">
-                                    We'll contact you within 24 hours to discuss your accommodation needs.
-                                </div>
-                            `;
-                            this.reset();
-                        } else {
-                            throw new Error('Submission failed');
-                        }
-                    } catch (error) {
-                        console.error('Form submission error:', error);
-                        formStatus.className = 'form-status error';
-                        formStatus.innerHTML = `
-                            <div style="font-weight: 600;">
-                                <i class="fas fa-exclamation-triangle"></i> There was an error submitting your request.
-                            </div>
-                            <div style="font-size: 0.9rem; margin-top: 5px;">
-                                Please call us directly at <a href="tel:+8302712377" style="color: #721c24;">830-271-2377</a>
-                            </div>
-                        `;
-                    }
-                    
-                    // Reset button
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> <span>Send Message</span>';
-                });
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Sending...</span>';
+            
+            // Create form data
+            const formData = new FormData(this);
+            
+            // Submit to Netlify
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => {
+                // Show success popup
+                successPopup.classList.add('show');
+                // Reset form
+                contactForm.reset();
+            })
+            .catch((error) => {
+                // Show error message
+                formStatus.style.display = 'block';
+                formStatus.className = 'form-status error';
+                formStatus.innerHTML = `
+                    <div style="font-weight: 600;">
+                        <i class="fas fa-exclamation-triangle"></i> There was an error submitting your request.
+                    </div>
+                    <div style="font-size: 0.9rem; margin-top: 5px;">
+                        Please call us directly at <a href="tel:+8302712377" style="color: #721c24;">830-271-2377</a>
+                    </div>
+                `;
+            })
+            .finally(() => {
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> <span>Send Message</span>';
+            });
+        });
+    }
+    
+    // Close popup functionality
+    if (closePopup) {
+        closePopup.addEventListener('click', function() {
+            successPopup.classList.remove('show');
+        });
+    }
+    
+    // Close popup when clicking outside
+    if (successPopup) {
+        successPopup.addEventListener('click', function(e) {
+            if (e.target === successPopup) {
+                successPopup.classList.remove('show');
             }
         });
-
+    }
+});
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1701,5 +2033,21 @@
             });
         });
     </script>
+    
+    <!-- Success Popup -->
+<div id="successPopup" class="popup-overlay">
+    <div class="popup-content">
+        <div class="popup-header">
+            <i class="fas fa-check-circle"></i>
+            <h3>Message Sent Successfully!</h3>
+        </div>
+        <div class="popup-body">
+            <p>Thank you for your inquiry. We'll contact you within 24 hours to discuss your accommodation needs.</p>
+        </div>
+        <div class="popup-footer">
+            <button id="closePopup" class="btn btn-primary">Close</button>
+        </div>
+    </div>
+</div>
 </body>
 </html>
