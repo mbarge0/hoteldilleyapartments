@@ -480,6 +480,16 @@
             letter-spacing: -1px;
         }
         
+        .hero-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: white;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+        
         .hero-text .subtitle {
             font-size: 1.3rem;
             margin-bottom: 20px;
@@ -1292,7 +1302,7 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Your Home Away From Home in <span class="highlight">South Texas</span></h1>
-                
+                <h3>Fully furnished apartments and hotel rooms</h3>
                 <div class="cta-buttons">
                     <a href="#accommodations" class="btn btn-primary">
                         <i class="fas fa-search"></i>
@@ -1876,79 +1886,89 @@
         </div>
     </div>
 </footer>
-
 <a href="#" class="scroll-to-top" id="scrollToTop">
     <i class="fas fa-arrow-up"></i>
 </a>
+<script>
 
-// Netlify form handling with success popup
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contactForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const formStatus = document.getElementById('formStatus');
-    const successPopup = document.getElementById('successPopup');
-    const closePopup = document.getElementById('closePopup');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+
+
+// Form submission to N8N webhook
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const formStatus = document.getElementById('formStatus');
             
-            // Show loading state
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Sending...</span>';
-            
-            // Create form data
-            const formData = new FormData(this);
-            
-            // Submit to Netlify
-            fetch('/', {
-                method: 'POST',
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formData).toString()
-            })
-            .then(() => {
-                // Show success popup
-                successPopup.classList.add('show');
-                // Reset form
-                contactForm.reset();
-            })
-            .catch((error) => {
-                // Show error message
-                formStatus.style.display = 'block';
-                formStatus.className = 'form-status error';
-                formStatus.innerHTML = `
-                    <div style="font-weight: 600;">
-                        <i class="fas fa-exclamation-triangle"></i> There was an error submitting your request.
-                    </div>
-                    <div style="font-size: 0.9rem; margin-top: 5px;">
-                        Please call us directly at <a href="tel:+8302712377" style="color: #721c24;">830-271-2377</a>
-                    </div>
-                `;
-            })
-            .finally(() => {
-                // Reset button
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> <span>Send Message</span>';
-            });
-        });
-    }
-    
-    // Close popup functionality
-    if (closePopup) {
-        closePopup.addEventListener('click', function() {
-            successPopup.classList.remove('show');
-        });
-    }
-    
-    // Close popup when clicking outside
-    if (successPopup) {
-        successPopup.addEventListener('click', function(e) {
-            if (e.target === successPopup) {
-                successPopup.classList.remove('show');
-            }
-        });
-    }
-});
+            if (contactForm) {
+                contactForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    // Show loading state
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Sending...</span>';
+                    formStatus.className = 'form-status loading';
+                    formStatus.style.display = 'block';
+                    formStatus.innerHTML = 'Submitting your request...';
+                    
+                    // Collect form data
+                    const formData = new FormData(this);
+                    const data = {
+                        fullName: formData.get('fullName'),
+                        email: formData.get('email'),
+                        phone: formData.get('phone') || '',
+                        company: formData.get('company') || '',
+                        interest: formData.get('interest'),
+                        timeline: formData.get('timeline') || '',
+                        message: formData.get('message') || '',
+                        leadSource: 'Website Contact Form',
+                        submittedAt: new Date().toISOString(),
+                        // Additional metadata for Airtable
+                        baseId: 'appy9YH03dUn9x3PF',
+                        tableId: 'tbl5A43drXp1oSDW3'
+                    };
+                    
+                    try {
+                        const response = await fetch('https://mattbarge.app.n8n.cloud/webhook/7176858a-0f51-45f5-8dd1-b9f0968eaf8a', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(data)
+                        });
+                        
+                        if (response.ok) {
+                            // Success
+                            formStatus.className = 'form-status success';
+                            formStatus.innerHTML = `
+                                <div style="font-weight: 600;">
+                                    <i class="fas fa-check-circle"></i> Thank you! Your inquiry has been received.
+                                </div>
+                                <div style="font-size: 0.9rem; margin-top: 5px;">
+                                    We'll contact you within 24 hours to discuss your accommodation needs.
+                                </div>
+                            `;
+                            this.reset();
+                        } else {
+                            throw new Error('Submission failed');
+                        }
+                    } catch (error) {
+                        console.error('Form submission error:', error);
+                        formStatus.className = 'form-status error';
+                        formStatus.innerHTML = `
+                            <div style="font-weight: 600;">
+                                <i class="fas fa-exclamation-triangle"></i> There was an error submitting your request.
+                            </div>
+                            <div style="font-size: 0.9rem; margin-top: 5px;">
+                                Please call us directly at <a href="tel:+8302712377" style="color: #721c24;">830-271-2377</a>
+                            </div>
+                        `;
+                    }
+                    
+                    // Reset button
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> <span>Send Message</span>';
+                });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -2033,21 +2053,5 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     </script>
-    
-    <!-- Success Popup -->
-<div id="successPopup" class="popup-overlay">
-    <div class="popup-content">
-        <div class="popup-header">
-            <i class="fas fa-check-circle"></i>
-            <h3>Message Sent Successfully!</h3>
-        </div>
-        <div class="popup-body">
-            <p>Thank you for your inquiry. We'll contact you within 24 hours to discuss your accommodation needs.</p>
-        </div>
-        <div class="popup-footer">
-            <button id="closePopup" class="btn btn-primary">Close</button>
-        </div>
-    </div>
-</div>
 </body>
 </html>
