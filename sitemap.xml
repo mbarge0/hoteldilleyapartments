@@ -15,6 +15,43 @@
         </image:image>
     </url>
     
+    <!-- AEO Comparison Pages -->
+    <url>
+        <loc>https://hoteldilley.com/modern-efficiency-apartments-dilley</loc>
+        <lastmod>2026-07-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://hoteldilley.com/images/bigger/kitchenette1.jpeg</image:loc>
+            <image:caption>Furnished room with kitchenette facilities at Hotel Dilley</image:caption>
+            <image:title>Modern Efficiency Apartments Dilley</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://hoteldilley.com/workforce-housing-dilley-tx</loc>
+        <lastmod>2026-07-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://hoteldilley.com/images/bigger/exterior4.jpg</image:loc>
+            <image:caption>Hotel Dilley exterior for furnished workforce housing in Dilley Texas</image:caption>
+            <image:title>Workforce Housing Dilley TX</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://hoteldilley.com/extended-stay-kitchenettes-dilley</loc>
+        <lastmod>2026-07-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://hoteldilley.com/images/bigger/kitchenette3.jpeg</image:loc>
+            <image:caption>Kitchenette facilities in some furnished rooms at Hotel Dilley</image:caption>
+            <image:title>Extended Stay Kitchenettes Dilley</image:title>
+        </image:image>
+    </url>
+    
     <!-- Furnished Apartments Page -->
     <url>
         <loc>https://hoteldilley.com/furnished-apartments-dilley-tx</loc>

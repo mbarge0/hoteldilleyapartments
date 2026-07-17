@@ -1,0 +1,18 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/modern-efficiency-apartments-dilley"
+  to = "/modern-efficiency-apartments-dilley.html"
+  status = 200
+
+[[redirects]]
+  from = "/workforce-housing-dilley-tx"
+  to = "/workforce-housing-dilley-tx.html"
+  status = 200
+
+[[redirects]]
+  from = "/extended-stay-kitchenettes-dilley"
+  to = "/extended-stay-kitchenettes-dilley.html"
+  status = 200

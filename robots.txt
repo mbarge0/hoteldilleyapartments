@@ -11,6 +11,9 @@ Allow: /month-to-month-apartments-dilley
 Allow: /all-utilities-included-dilley-tx
 Allow: /oilfield-housing-dilley
 Allow: /extended-stay-dilley-texas
+Allow: /modern-efficiency-apartments-dilley
+Allow: /workforce-housing-dilley-tx
+Allow: /extended-stay-kitchenettes-dilley
 Allow: /blog
 
 # Block admin and private directories
