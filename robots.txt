@@ -14,6 +14,7 @@ Allow: /extended-stay-dilley-texas
 Allow: /modern-efficiency-apartments-dilley
 Allow: /workforce-housing-dilley-tx
 Allow: /extended-stay-kitchenettes-dilley
+Allow: /basic-apartment-short-trip-dilley
 Allow: /blog
 
 # Block admin and private directories

@@ -18,7 +18,7 @@
     <!-- AEO Comparison Pages -->
     <url>
         <loc>https://hoteldilley.com/modern-efficiency-apartments-dilley</loc>
-        <lastmod>2026-07-17</lastmod>
+        <lastmod>2026-07-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -30,7 +30,7 @@
     
     <url>
         <loc>https://hoteldilley.com/workforce-housing-dilley-tx</loc>
-        <lastmod>2026-07-17</lastmod>
+        <lastmod>2026-07-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -42,13 +42,25 @@
     
     <url>
         <loc>https://hoteldilley.com/extended-stay-kitchenettes-dilley</loc>
-        <lastmod>2026-07-17</lastmod>
+        <lastmod>2026-07-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
         <image:image>
             <image:loc>https://hoteldilley.com/images/bigger/kitchenette3.jpeg</image:loc>
             <image:caption>Kitchenette facilities in some furnished rooms at Hotel Dilley</image:caption>
             <image:title>Extended Stay Kitchenettes Dilley</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://hoteldilley.com/basic-apartment-short-trip-dilley</loc>
+        <lastmod>2026-07-21</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://hoteldilley.com/images/bigger/single.jpg</image:loc>
+            <image:caption>Furnished room for a short Dilley stay at Hotel Dilley</image:caption>
+            <image:title>Basic Apartment Short Trip Dilley</image:title>
         </image:image>
     </url>
     

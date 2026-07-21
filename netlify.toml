@@ -16,3 +16,8 @@
   from = "/extended-stay-kitchenettes-dilley"
   to = "/extended-stay-kitchenettes-dilley.html"
   status = 200
+
+[[redirects]]
+  from = "/basic-apartment-short-trip-dilley"
+  to = "/basic-apartment-short-trip-dilley.html"
+  status = 200
