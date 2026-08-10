@@ -26,7 +26,7 @@
                     <a href="#rooms">Room Types</a>
                     <a href="#amenities">Amenities</a>
                     <a href="#testimonials">Reviews</a>
-                    <a href="tel:+8302712377">Call</a>
+                    <a href="tel:+8302712377" class="nav-call-btn">Call Now</a>
                     <a href="#contact">Book Now</a>
                 </div>
             </div>
@@ -694,6 +694,18 @@
             --pure-black: #000000;
             --accent-gold: #d4af37;
         }
+        .nav-call-btn {
+            background: var(--primary-brown);
+            color: var(--pure-white) !important;
+            padding: 0.55rem 1.15rem;
+            border-radius: 6px;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: background 0.3s ease;
+        }
+        .nav-call-btn:hover { background: var(--accent-gold); color: var(--dark-charcoal) !important; }
+        .nav-call-btn::after { display: none; }
+
         
         * { 
             margin: 0; 
