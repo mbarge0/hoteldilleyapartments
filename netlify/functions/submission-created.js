@@ -123,7 +123,7 @@ function buildEmail(lead) {
   const text = [
     "Thanks for requesting the financial package on Hotel Dilley Grand, " + nameLine + ".",
     "",
-    "110 S Main St, Dilley, TX 78017. 20 rooms plus a manager's residence. Asking $650,000. Seller is 110 Dilley LLC.",
+    "110 S Main St, Dilley, TX 78017. 20 units total: 19 rooms plus an owner's residence. Asking $650,000. Seller is 110 Dilley LLC.",
     "",
     "The property is listed exclusively with Marcus & Millichap through year-end 2026. I am a Texas real estate license holder. Please copy the listing broker on any offer or further diligence so we stay inside the listing.",
     "",
@@ -156,7 +156,7 @@ function buildEmail(lead) {
   const html = [
     '<div style="font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;color:#291c11;line-height:1.55;max-width:640px">',
     "<p>Thanks for requesting the financial package on Hotel Dilley Grand, " + escapeHtml(nameLine) + ".</p>",
-    "<p>110 S Main St, Dilley, TX 78017. 20 rooms plus a manager&rsquo;s residence. Asking <strong>$650,000</strong>. Seller is 110 Dilley LLC.</p>",
+    "<p>110 S Main St, Dilley, TX 78017. 20 units total: 19 rooms plus an owner&rsquo;s residence. Asking <strong>$650,000</strong>. Seller is 110 Dilley LLC.</p>",
     "<p>The property is listed exclusively with Marcus &amp; Millichap through year-end 2026. I am a Texas real estate license holder. Please copy the listing broker on any offer or further diligence so we stay inside the listing.</p>",
     "<p><strong>Attached (two PDFs):</strong></p>",
     "<ol>",
