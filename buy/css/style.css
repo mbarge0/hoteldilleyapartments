@@ -343,3 +343,11 @@ input[type=range] { width: 100%; accent-color: var(--gold); height: 28px; }
 @media print {
   .site-header, .sticky-cta, .tour, .gallery-grid a:hover img { display: none; }
 }
+
+/* Mobile header fit (390px-class viewports): drop decorative suffix, compact CTA */
+@media (max-width: 660px) {
+  .brand .grand { display: none; }
+  .brand img { height: 13px; }
+  .header-cta { font-size: .72rem; padding: .45rem .7rem; letter-spacing: 0; }
+  .site-header .wrap { gap: .8rem; }
+}
