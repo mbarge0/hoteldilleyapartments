@@ -1,4 +1,4 @@
-/* Hotel Dilley Grand — deal site JS. No dependencies. */
+/* Hotel Dilley Grand, deal site JS. No dependencies. */
 (function () {
   'use strict';
 
@@ -72,7 +72,7 @@
       var a = links[idx];
       img.src = a.getAttribute('href');
       img.alt = a.dataset.caption || '';
-      cap.textContent = (idx + 1) + ' / ' + links.length + ' — ' + (a.dataset.caption || '');
+      cap.textContent = (idx + 1) + ' / ' + links.length + ', ' + (a.dataset.caption || '');
     };
 
     links.forEach(function (a, i) {
