@@ -2,6 +2,9 @@
   publish = "."
   functions = "netlify/functions"
 
+[functions."submission-created"]
+  included_files = ["netlify/functions/dilley-package/*.pdf"]
+
 [[redirects]]
   from = "/modern-efficiency-apartments-dilley"
   to = "/modern-efficiency-apartments-dilley.html"
