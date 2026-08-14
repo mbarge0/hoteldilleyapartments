@@ -34,7 +34,26 @@
   }
 }
 </script>
-<!-- GA4: paste gtag snippet here when property is created -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B0M581413M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B0M581413M');
+  // Funnel events: email field engaged, form submitted
+  document.addEventListener('DOMContentLoaded', function () {
+    var email = document.getElementById('f-email');
+    var form = document.querySelector('form[name="buyer-inquiry"]');
+    var engaged = false;
+    if (email) email.addEventListener('focus', function () {
+      if (!engaged) { engaged = true; gtag('event', 'email_engaged', { form_name: 'buyer-inquiry' }); }
+    });
+    if (form) form.addEventListener('submit', function () {
+      gtag('event', 'form_submit_buy', { form_name: 'buyer-inquiry' });
+    });
+  });
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
