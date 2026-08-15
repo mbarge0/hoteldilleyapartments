@@ -135,9 +135,18 @@
   var track = function (name, params) {
     if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
   };
+  var pkgModal = $('#package-modal');
   $$('a[href="#package"], a[href="/#package"]').forEach(function (a) {
-    a.addEventListener('click', function () { track('cta_package_click', { location: a.dataset.loc || 'page' }); });
+    a.addEventListener('click', function (e) {
+      track('cta_package_click', { location: a.dataset.loc || 'page' });
+      if (pkgModal && typeof pkgModal.showModal === 'function') { e.preventDefault(); pkgModal.showModal(); }
+    });
   });
+  if (pkgModal) {
+    var pc = $('.modal-close', pkgModal);
+    if (pc) pc.addEventListener('click', function () { pkgModal.close(); });
+    pkgModal.addEventListener('click', function (e) { if (e.target === pkgModal) pkgModal.close(); });
+  }
   var form = $('form[name="buyer-inquiry"]');
   if (form) form.addEventListener('submit', function () { track('lead_form_submit'); });
 })();

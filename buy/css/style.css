@@ -351,3 +351,19 @@ input[type=range] { width: 100%; accent-color: var(--gold); height: 28px; }
   .header-cta { font-size: .72rem; padding: .45rem .7rem; letter-spacing: 0; }
   .site-header .wrap { gap: .8rem; }
 }
+
+/* ---------- form modal ---------- */
+dialog.form-modal {
+  border: 1px solid var(--ink, #17171e); background: var(--paper, #faf8f4);
+  padding: clamp(1.3rem, 3vw, 2.1rem);
+  width: min(46rem, 92vw); max-height: 86vh; overflow: auto;
+  box-shadow: 12px 12px 0 rgba(23,23,30,.4);
+}
+dialog.form-modal::backdrop { background: rgba(15,12,20,.58); }
+.modal-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 1rem; }
+.modal-head h3 { margin: 0; }
+.modal-close {
+  border: 1px solid var(--ink, #17171e); background: transparent; font: inherit;
+  font-size: .85rem; padding: .3rem .7rem; cursor: pointer;
+}
+.modal-close:hover { background: var(--ink, #17171e); color: var(--paper, #faf8f4); }

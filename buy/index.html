@@ -495,6 +495,12 @@
         <h2>Request the financial package</h2>
         <p class="lede">P&amp;L detail behind the T12, the renovation documentation, and the financing one-pager. Sent to your inbox; walkthroughs booked from there, in person or live video.</p>
       </div>
+      <p><a class="btn btn-primary" href="#package" data-loc="form-section" style="font-size:1.05rem;padding:1rem 2rem">Request the financial package</a></p>
+      <dialog class="form-modal" id="package-modal" aria-label="Request the financial package">
+        <div class="modal-head">
+          <h3>Request the financial package</h3>
+          <button type="button" class="modal-close" aria-label="Close">Close &times;</button>
+        </div>
       <form name="buyer-inquiry" method="POST" action="/buy/thanks/" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="buyer-inquiry">
         <input type="hidden" name="source" id="f-source" value="">
@@ -538,6 +544,7 @@
         </div>
       </form>
       <p class="small" style="margin-top:1rem">Your information goes to the ownership team only and is used to send the package and coordinate a walkthrough. No lists, no spam.</p>
+      </dialog>
     </div>
   </section>
 </main>
