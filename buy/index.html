@@ -89,10 +89,14 @@
       <p class="hero-sub">
         <b>19 rooms + owner&rsquo;s residence (20 units)</b><span class="dot">&middot;</span>Renovated 2024<span class="dot">&middot;</span>1 hour from San Antonio<span class="dot">&middot;</span><b>$650,000</b>
       </p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#package" data-loc="hero">Request the financial package</a>
-        <a class="btn btn-ghost" href="#package" data-loc="hero-walkthrough">Book a walkthrough</a>
-      </div>
+      <form class="micro-form" method="POST" action="/buy/thanks/">
+        <input type="hidden" name="form-name" value="buyer-inquiry">
+        <input type="hidden" name="source" value="hero-micro">
+        <label class="sr-only" for="hb-email">Email address</label>
+        <input id="hb-email" name="email" type="email" required placeholder="you@company.com" autocomplete="email">
+        <button class="btn btn-primary" type="submit">Send me the package</button>
+      </form>
+      <p class="hb-note">P&amp;L detail, renovation documentation, and the financing one-pager, by email. Ownership team only &mdash; no lists, no spam. <a href="#package" data-loc="hero-walkthrough">Or book a walkthrough.</a></p>
       <p class="hero-note">&ldquo;About $130k down&rdquo; reflects an SBA 7(a) profile at roughly 20% down on the $650,000 ask, lender-quoted, subject to underwriting and appraisal.</p>
     </div>
   </section>

@@ -149,4 +149,21 @@
   }
   var form = $('form[name="buyer-inquiry"]');
   if (form) form.addEventListener('submit', function () { track('lead_form_submit'); });
+
+  /* ---------- hero micro-form: AJAX capture, no navigation ---------- */
+  var micro = $('.micro-form');
+  if (micro) {
+    micro.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = $('button', micro); btn.disabled = true; btn.textContent = 'Sending…';
+      var body = new URLSearchParams(new FormData(micro)).toString();
+      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
+        .then(function (r) {
+          if (!r.ok) throw new Error(r.status);
+          track('form_submit_buy', { form_name: 'buyer-inquiry', variant: 'hero-micro' });
+          micro.outerHTML = '<p class="hb-done"><b>Sent.</b> The financial package is on its way to your inbox.</p>';
+        })
+        .catch(function () { micro.submit(); });
+    });
+  }
 })();
