@@ -48,7 +48,6 @@ Allow: /*.ico
 
 # Sitemap location
 Sitemap: https://hoteldilley.com/sitemap.xml
-Sitemap: https://hoteldilley.com/sitemap-images.xml
 
 # Crawl delay (optional - helps prevent server overload)
 Crawl-delay: 1
