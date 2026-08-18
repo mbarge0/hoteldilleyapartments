@@ -104,7 +104,7 @@ section { padding: clamp(3.2rem, 8vw, 5.5rem) 0; }
 }
 .header-contact a { color: var(--cream-on-dark); text-decoration: none; font-weight: 600; opacity: .92; }
 .header-contact a:hover { opacity: 1; color: #fff; }
-.header-phone-num { opacity: .78; white-space: nowrap; }
+.header-phone-num { opacity: .78; white-space: nowrap; font-weight: 600; }
 .buyer-contact { font-family: var(--sans); font-size: .92rem; margin-top: .85rem; }
 .buyer-contact a { font-weight: 600; text-decoration: none; }
 .on-dark.buyer-contact { color: rgba(255,255,255,.88); }
