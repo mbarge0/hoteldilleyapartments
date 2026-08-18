@@ -2111,45 +2111,6 @@ src="https://www.facebook.com/tr?id=3399458616871570&ev=PageView&noscript=1"
             });
         });
 
-        // Mobile navigation
-        (function () {
-            var toggle = document.querySelector('.mobile-toggle');
-            var nav = document.getElementById('mobileNav');
-            var backdrop = document.getElementById('mobileNavBackdrop');
-            if (!toggle || !nav || !backdrop) return;
-            var closeBtn = nav.querySelector('.mobile-nav-close');
-
-            function open() {
-                backdrop.hidden = false;
-                requestAnimationFrame(function () {
-                    nav.classList.add('open');
-                    backdrop.classList.add('open');
-                });
-                document.body.classList.add('nav-open');
-                toggle.setAttribute('aria-expanded', 'true');
-                nav.setAttribute('aria-hidden', 'false');
-            }
-            function close() {
-                nav.classList.remove('open');
-                backdrop.classList.remove('open');
-                document.body.classList.remove('nav-open');
-                toggle.setAttribute('aria-expanded', 'false');
-                nav.setAttribute('aria-hidden', 'true');
-                setTimeout(function () { backdrop.hidden = true; }, 320);
-            }
-
-            toggle.addEventListener('click', function (e) {
-                e.preventDefault();
-                nav.classList.contains('open') ? close() : open();
-            });
-            closeBtn.addEventListener('click', close);
-            backdrop.addEventListener('click', close);
-            // a tapped link should close the drawer, including same-page anchors
-            nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', close); });
-            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
-            window.addEventListener('resize', function () { if (innerWidth > 768) close(); });
-        })();
-
         // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.querySelector('.header');
@@ -2217,6 +2178,49 @@ src="https://www.facebook.com/tr?id=3399458616871570&ev=PageView&noscript=1"
                 this.style.transform = 'translateY(0) scale(1)';
             });
         });
-    </script>
+    
+}
+});
+</script>
+<script>
+        // Mobile navigation
+        (function () {
+            var toggle = document.querySelector('.mobile-toggle');
+            var nav = document.getElementById('mobileNav');
+            var backdrop = document.getElementById('mobileNavBackdrop');
+            if (!toggle || !nav || !backdrop) return;
+            var closeBtn = nav.querySelector('.mobile-nav-close');
+
+            function open() {
+                backdrop.hidden = false;
+                requestAnimationFrame(function () {
+                    nav.classList.add('open');
+                    backdrop.classList.add('open');
+                });
+                document.body.classList.add('nav-open');
+                toggle.setAttribute('aria-expanded', 'true');
+                nav.setAttribute('aria-hidden', 'false');
+            }
+            function close() {
+                nav.classList.remove('open');
+                backdrop.classList.remove('open');
+                document.body.classList.remove('nav-open');
+                toggle.setAttribute('aria-expanded', 'false');
+                nav.setAttribute('aria-hidden', 'true');
+                setTimeout(function () { backdrop.hidden = true; }, 320);
+            }
+
+            toggle.addEventListener('click', function (e) {
+                e.preventDefault();
+                nav.classList.contains('open') ? close() : open();
+            });
+            closeBtn.addEventListener('click', close);
+            backdrop.addEventListener('click', close);
+            // a tapped link should close the drawer, including same-page anchors
+            nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', close); });
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+            window.addEventListener('resize', function () { if (innerWidth > 768) close(); });
+        })();
+</script>
 </body>
 </html>
