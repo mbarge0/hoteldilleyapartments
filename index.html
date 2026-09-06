@@ -1181,18 +1181,39 @@
             background: rgba(15,15,18,.5);
             z-index: 1999;
             opacity: 0;
+            pointer-events: none;
             transition: opacity .3s;
         }
-        .mobile-nav-backdrop.open { opacity: 1; }
+        .mobile-nav-backdrop.open { opacity: 1; pointer-events: auto; }
         body.nav-open { overflow: hidden; }
         
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .mobile-nav, .mobile-nav-backdrop {
+                display: block;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
                 gap: 50px;
             }
-            
+
+            .hero-content2 {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
             .hero-text h1 {
                 font-size: 2.5rem;
             }
@@ -1213,19 +1234,7 @@
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-toggle {
-                display: block;
-            }
-            
-            .mobile-nav, .mobile-nav-backdrop {
-                display: block;
-            }
-            
+
             .section-header h2 {
                 font-size: 2.2rem;
             }
@@ -2219,7 +2228,7 @@ src="https://www.facebook.com/tr?id=3399458616871570&ev=PageView&noscript=1"
             // a tapped link should close the drawer, including same-page anchors
             nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', close); });
             document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
-            window.addEventListener('resize', function () { if (innerWidth > 768) close(); });
+            window.addEventListener('resize', function () { if (innerWidth > 1024) close(); });
         })();
 </script>
 </body>
