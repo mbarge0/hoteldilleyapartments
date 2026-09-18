@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  var T12_NOI = 69333; // T12 NOI (Aug 2025 - Jul 2026), owner P&L
+  var T12_NOI = 69010; // T12 NOI (Sep 2025 - Aug 2026), owner P&L
 
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
