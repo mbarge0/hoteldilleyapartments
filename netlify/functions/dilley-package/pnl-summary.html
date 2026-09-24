@@ -2,180 +2,183 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Hotel Dilley Grand T12 P&amp;L Summary</title>
+<title>Hotel Dilley Grand T12 P&amp;L</title>
 <style>
-  @page { size: letter; margin: 0.45in 0.5in; }
+  @page { size: letter; margin: 0.55in 0.6in; }
   * { box-sizing: border-box; }
-  body { font-family: Georgia, "Times New Roman", serif; font-size: 9.5pt; line-height: 1.35; color: #291c11; margin: 0; }
-  .hdr { font-family: Helvetica, Arial, sans-serif; font-size: 7.5pt; letter-spacing: 0.18em; text-transform: uppercase; color: #8a7660; margin-bottom: 0.35rem; }
-  h1 { font-size: 16pt; font-weight: 700; margin: 0 0 0.25rem; }
-  .sub { font-size: 9pt; color: #5f4e3d; margin-bottom: 0.35rem; }
-  .pill-row { display: flex; gap: 0.5rem; margin: 0.5rem 0 0.65rem; flex-wrap: wrap; }
-  .pill { border: 1px solid #c99a4b; padding: 0.3rem 0.55rem; border-radius: 2px; font-family: Helvetica, Arial, sans-serif; font-size: 8pt; flex: 1; min-width: 88px; }
-  .pill strong { color: #b04a17; font-size: 10.5pt; display: block; }
-  p.note { font-size: 8.5pt; color: #5f4e3d; margin: 0.4rem 0; }
-  p.lead { font-size: 9pt; margin: 0.35rem 0 0.5rem; }
-  table { width: 100%; border-collapse: collapse; font-size: 8.5pt; margin: 0.35rem 0; }
-  th, td { border: 1px solid #d9cbb2; padding: 0.22rem 0.32rem; text-align: right; }
-  th:first-child, td:first-child { text-align: left; }
-  th { background: #f3ead9; font-weight: 600; }
-  .total td { font-weight: 700; background: #f9f4eb; }
-  h2 { font-size: 10.5pt; margin: 0.65rem 0 0.3rem; border-bottom: 1px solid #d9cbb2; padding-bottom: 0.12rem; }
-  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; }
-  .three { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; }
-  .box { border: 1px solid #d9cbb2; padding: 0.45rem; font-size: 8.5pt; background: #fdfbf7; }
-  .chip-row { display: flex; gap: 0.45rem; flex-wrap: wrap; margin: 0.4rem 0; }
-  .chip { font-family: Helvetica, Arial, sans-serif; font-size: 8pt; background: #f3ead9; border: 1px solid #c99a4b; padding: 0.35rem 0.5rem; border-radius: 2px; }
-  .chip strong { color: #b04a17; }
-  .chart-wrap { border: 1px solid #d9cbb2; background: #fdfbf7; padding: 0.4rem 0.35rem 0.25rem; margin: 0.35rem 0; }
-  .chart-legend { font-family: Helvetica, Arial, sans-serif; font-size: 7pt; color: #5f4e3d; margin-bottom: 0.25rem; }
-  .chart-legend span { margin-right: 0.75rem; }
-  .leg-rev::before { content: ""; display: inline-block; width: 8px; height: 8px; background: #c99a4b; margin-right: 3px; vertical-align: middle; }
-  .leg-noi::before { content: ""; display: inline-block; width: 8px; height: 8px; background: #b04a17; margin-right: 3px; vertical-align: middle; }
-  .mix-bar { display: flex; height: 14px; border: 1px solid #d9cbb2; margin: 0.35rem 0; overflow: hidden; font-size: 0; }
-  .mix-hotel { background: #c99a4b; width: 77.2%; }
-  .mix-lease { background: #8a7660; width: 20.6%; }
-  .mix-other { background: #d9cbb2; width: 2.2%; }
-  .bold-top td:first-child { font-weight: 600; }
-  .page-break { page-break-before: always; }
-  .footer { margin-top: 0.75rem; font-size: 7.5pt; color: #8a7660; border-top: 1px solid #d9cbb2; padding-top: 0.35rem; }
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 1.45;
+    color: #1a1a1a;
+    margin: 0;
+    background: #fff;
+  }
+  .hdr {
+    font-size: 8pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #14532d;
+    margin-bottom: 0.5rem;
+  }
+  h1 {
+    font-size: 20pt;
+    font-weight: 700;
+    color: #0F3D2E;
+    margin: 0 0 0.2rem;
+  }
+  .address {
+    font-size: 9pt;
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+  }
+  .hero {
+    margin-bottom: 1.5rem;
+  }
+  .hero-noi {
+    font-size: 36pt;
+    font-weight: 700;
+    color: #0F3D2E;
+    line-height: 1.05;
+    margin: 0;
+  }
+  .hero-noi span {
+    font-size: 14pt;
+    font-weight: 600;
+    color: #14532d;
+    display: block;
+    margin-top: 0.35rem;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  .hero-meta div {
+    font-size: 9.5pt;
+    color: #4a5568;
+  }
+  .hero-meta strong {
+    display: block;
+    font-size: 14pt;
+    color: #0F3D2E;
+    font-weight: 700;
+  }
+  .growth {
+    background: #E8F2EC;
+    border: 1px solid #A7C4B5;
+    border-radius: 6px;
+    padding: 0.85rem 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 9.5pt;
+    line-height: 1.5;
+  }
+  .growth strong { color: #0F3D2E; }
+  .chart-wrap {
+    margin: 0.75rem 0 0;
+  }
+  .chart-label {
+    font-size: 8pt;
+    color: #14532d;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.35rem;
+  }
+  h2 {
+    font-size: 11pt;
+    font-weight: 700;
+    color: #0F3D2E;
+    margin: 0 0 0.5rem;
+  }
+  table.exp {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9.5pt;
+    margin-bottom: 1.25rem;
+  }
+  table.exp th {
+    text-align: left;
+    padding: 0.45rem 0.5rem;
+    background: #0F3D2E;
+    color: #fff;
+  }
+  table.exp th:last-child, table.exp td:last-child { text-align: right; }
+  table.exp td {
+    padding: 0.4rem 0.5rem;
+    border-bottom: 1px solid #D1E7DD;
+  }
+  table.exp tr:nth-child(even) td { background: #F7FAF8; }
+  .note {
+    font-size: 8.5pt;
+    color: #4a5568;
+    line-height: 1.45;
+    margin-bottom: 1rem;
+  }
+  .footer {
+    font-size: 8pt;
+    color: #4a5568;
+    margin-top: 1.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #A7C4B5;
+    line-height: 1.45;
+  }
 </style>
 </head>
 <body>
-<p class="hdr">Buyer diligence · September 24, 2026</p>
-<h1>Hotel Dilley Grand · T12 P&amp;L Summary</h1>
-<p class="sub">110 S Main St, Dilley, TX 78017 · 20 units: 19 rooms + owner&rsquo;s residence · 110 Dilley LLC</p>
-<div class="pill-row">
-  <div class="pill">Ask<br><strong>$650,000</strong></div>
-  <div class="pill">Cap at ask<br><strong>10.6%</strong></div>
-  <div class="pill">T12 revenue<br><strong>$158,857</strong></div>
-  <div class="pill">T12 NOI<br><strong>$69,010</strong></div>
-  <div class="pill">Window<br><strong>Owner P&amp;L Sep 2025–Aug 2026</strong></div>
-</div>
-<p class="lead"><strong>Does it make money?</strong> T12 net operating income is <strong>$69,010</strong> on <strong>$158,857</strong> revenue after <strong>$89,847</strong> operating expenses (pre-debt, pre-owner salary beyond the Management &amp; Cleaning line). Not a forecast. Figures from monthly P&amp;L columns; verify in diligence.</p>
+<p class="hdr">Buyer package · September 24, 2026</p>
+<h1>T12 P&amp;L summary</h1>
+<p class="address">Hotel Dilley Grand · 110 S Main St, Dilley, TX 78017 · Owner P&amp;L Sep 2025–Aug 2026 · Not a forecast</p>
 
-<h2>Growth · monthly revenue and NOI</h2>
-<div class="chart-wrap">
-  <div class="chart-legend"><span class="leg-rev">Revenue</span><span class="leg-noi">NOI</span></div>
-  <svg viewBox="0 0 520 72" width="100%" height="72" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Monthly revenue and NOI Sep 2025 through Aug 2026">
-    <!-- max rev 17988, max noi 10329 -->
-    <g font-family="Helvetica,Arial,sans-serif" font-size="7" fill="#8a7660">
-      <text x="0" y="68">Sep</text><text x="42" y="68">Oct</text><text x="84" y="68">Nov</text><text x="126" y="68">Dec</text>
-      <text x="168" y="68">Jan</text><text x="210" y="68">Feb</text><text x="252" y="68">Mar</text><text x="294" y="68">Apr</text>
-      <text x="336" y="68">May</text><text x="378" y="68">Jun</text><text x="420" y="68">Jul</text><text x="462" y="68">Aug</text>
-    </g>
-    <!-- revenue bars -->
-    <rect x="4" y="52" width="28" height="12" fill="#c99a4b" opacity="0.85"/><!-- 10086 -->
-    <rect x="46" y="49" width="28" height="15" fill="#c99a4b" opacity="0.85"/>
-    <rect x="88" y="48" width="28" height="16" fill="#c99a4b" opacity="0.85"/>
-    <rect x="130" y="51" width="28" height="13" fill="#c99a4b" opacity="0.85"/>
-    <rect x="172" y="47" width="28" height="17" fill="#c99a4b" opacity="0.85"/>
-    <rect x="214" y="54" width="28" height="10" fill="#c99a4b" opacity="0.85"/>
-    <rect x="256" y="52" width="28" height="12" fill="#c99a4b" opacity="0.85"/>
-    <rect x="298" y="45" width="28" height="19" fill="#c99a4b" opacity="0.85"/>
-    <rect x="340" y="43" width="28" height="21" fill="#c99a4b" opacity="0.85"/>
-    <rect x="382" y="43" width="28" height="21" fill="#c99a4b" opacity="0.85"/>
-    <rect x="424" y="47" width="28" height="17" fill="#c99a4b" opacity="0.85"/>
-    <rect x="466" y="47" width="28" height="17" fill="#c99a4b" opacity="0.85"/>
-    <!-- NOI bars (scaled to same 58px max as rev) -->
-    <rect x="4" y="38" width="28" height="8" fill="#b04a17"/>
-    <rect x="46" y="34" width="28" height="12" fill="#b04a17"/>
-    <rect x="88" y="33" width="28" height="13" fill="#b04a17"/>
-    <rect x="130" y="36" width="28" height="10" fill="#b04a17"/>
-    <rect x="172" y="31" width="28" height="15" fill="#b04a17"/>
-    <rect x="214" y="39" width="28" height="7" fill="#b04a17"/>
-    <rect x="256" y="36" width="28" height="10" fill="#b04a17"/>
-    <rect x="298" y="28" width="28" height="18" fill="#b04a17"/>
-    <rect x="340" y="26" width="28" height="20" fill="#b04a17"/>
-    <rect x="382" y="26" width="28" height="20" fill="#b04a17"/>
-    <rect x="424" y="32" width="28" height="14" fill="#b04a17"/>
-    <rect x="466" y="32" width="28" height="14" fill="#b04a17"/>
-  </svg>
-</div>
-<div class="chip-row">
-  <div class="chip">Recent 6 (Mar–Aug 2026): Rev <strong>$92,191</strong> · NOI <strong>$46,196</strong></div>
-  <div class="chip">Prior 6 (Sep 2025–Feb 2026): Rev $66,666 · NOI $22,079</div>
-  <div class="chip">Change: <strong>+38%</strong> revenue · <strong>+109%</strong> NOI</div>
-</div>
-<p class="note">Prior T12 NOI (Sep 2024–Aug 2025) was $40,809; current T12 is +69% YoY (lease-up context, not a forward run-rate).</p>
-
-<h2>Income mix (T12)</h2>
-<div class="mix-bar"><div class="mix-hotel"></div><div class="mix-lease"></div><div class="mix-other"></div></div>
-<p class="note" style="margin-top:0.2rem">Nightly hotel <strong>$122,678</strong> (77.2%) · Monthly leases <strong>$32,750</strong> (20.6%) · Other rental (unclassified) <strong>$3,429</strong> (2.2%). City of Dilley Commercial CO (Hotel), July 9, 2024, Permit 24-07-09. P&amp;L shows both nightly and monthly income in operation.</p>
-
-<div class="two">
-  <div>
-    <h2>Trailing four months</h2>
-    <table>
-      <thead><tr><th>Month</th><th>Revenue</th><th>NOI</th></tr></thead>
-      <tbody>
-        <tr><td>May 2026</td><td>$17,857</td><td>$10,329</td></tr>
-        <tr><td>June 2026</td><td>$17,988</td><td>$10,191</td></tr>
-        <tr><td>July 2026</td><td>$14,638</td><td>$6,425</td></tr>
-        <tr><td>August 2026</td><td>$14,558</td><td>$6,376</td></tr>
-        <tr class="total"><td>Trailing four total</td><td>$65,041</td><td>$33,322</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="box">
-    <strong>July 2026 expense lines</strong> in the source workbook matched June 2026 line-by-line in the prior export (possible copy-forward). Treat July expenses and July NOI ($6,425) as pending verification against bank and vendor records. The $3,429 &ldquo;other rental&rdquo; is $342.90/month Nov 2025–Aug 2026 not mapped to Hotel or Lease lines.
+<div class="hero">
+  <p class="hero-noi">$69,010<span>T12 net operating income on $158,857 revenue</span></p>
+  <div class="hero-meta">
+    <div><strong>$650,000</strong> Ask</div>
+    <div><strong>10.6%</strong> Cap at ask</div>
+    <div><strong>$89,847</strong> T12 operating expenses</div>
   </div>
 </div>
 
-<h2>Monthly detail · T12 window</h2>
-<table>
-  <thead>
-    <tr>
-      <th></th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th><th>Jan 26</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul</th><th>Aug</th><th>T12</th>
-    </tr>
-  </thead>
+<div class="growth">
+  <strong>Growth (recent vs prior six months)</strong><br>
+  Mar–Aug 2026: Rev <strong>$92,191</strong> · NOI <strong>$46,196</strong><br>
+  Sep 2025–Feb 2026: Rev $66,666 · NOI $22,079<br>
+  Change: <strong>+38%</strong> revenue · <strong>+109%</strong> NOI. Prior T12 NOI was $40,809 (+69% YoY; not a forward run-rate).
+  <div class="chart-wrap">
+    <div class="chart-label">Monthly NOI (T12 window)</div>
+    <svg viewBox="0 0 480 48" width="100%" height="48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0" y="0" width="480" height="48" fill="#F7FAF8" rx="2"/>
+      <!-- max NOI 10329, bar area height 40 -->
+      <rect x="8" y="38" width="30" height="4" fill="#14532d" opacity="0.85"/>
+      <rect x="46" y="32" width="30" height="10" fill="#14532d" opacity="0.85"/>
+      <rect x="84" y="29" width="30" height="13" fill="#14532d" opacity="0.85"/>
+      <rect x="122" y="35" width="30" height="7" fill="#14532d" opacity="0.85"/>
+      <rect x="160" y="26" width="30" height="16" fill="#14532d" opacity="0.85"/>
+      <rect x="198" y="43" width="30" height="3" fill="#14532d" opacity="0.85"/>
+      <rect x="236" y="34" width="30" height="10" fill="#14532d" opacity="0.85"/>
+      <rect x="274" y="13" width="30" height="31" fill="#14532d"/>
+      <rect x="312" y="7" width="30" height="37" fill="#14532d"/>
+      <rect x="350" y="8" width="30" height="36" fill="#14532d"/>
+      <rect x="388" y="22" width="30" height="22" fill="#14532d" opacity="0.85"/>
+      <rect x="426" y="23" width="30" height="21" fill="#14532d" opacity="0.85"/>
+    </svg>
+  </div>
+</div>
+
+<h2>Where the money goes (top expenses)</h2>
+<p class="note" style="margin-top:0;margin-bottom:0.5rem">These four lines are about 72% of T12 operating expenses.</p>
+<table class="exp">
+  <thead><tr><th>Expense</th><th>T12</th><th>% of OpEx</th></tr></thead>
   <tbody>
-    <tr><td>Hotel</td><td>4,486</td><td>6,647</td><td>7,886</td><td>6,230</td><td>10,320</td><td>5,976</td><td>8,512</td><td>14,352</td><td>15,714</td><td>15,845</td><td>13,395</td><td>13,315</td><td>122,678</td></tr>
-    <tr><td>Lease</td><td>5,600</td><td>5,100</td><td>4,050</td><td>4,050</td><td>3,150</td><td>1,800</td><td>1,800</td><td>1,800</td><td>1,800</td><td>1,800</td><td>900</td><td>900</td><td>32,750</td></tr>
-    <tr><td>Other</td><td></td><td></td><td>343</td><td>343</td><td>343</td><td>343</td><td>343</td><td>343</td><td>343</td><td>343</td><td>343</td><td>343</td><td>3,429</td></tr>
-    <tr><td>Revenue</td><td>10,086</td><td>11,747</td><td>12,279</td><td>10,623</td><td>13,812</td><td>8,119</td><td>10,655</td><td>16,495</td><td>17,857</td><td>17,988</td><td>14,638</td><td>14,558</td><td>158,857</td></tr>
-    <tr><td>Expenses</td><td>7,656</td><td>7,567</td><td>7,293</td><td>7,446</td><td>7,538</td><td>7,088</td><td>6,900</td><td>7,375</td><td>7,527</td><td>7,797</td><td>8,212</td><td>8,182</td><td>89,847</td></tr>
-    <tr class="total"><td>NOI</td><td>2,430</td><td>4,180</td><td>4,986</td><td>3,177</td><td>6,275</td><td>1,031</td><td>3,755</td><td>9,120</td><td>10,329</td><td>10,191</td><td>6,425</td><td>6,376</td><td>69,010</td></tr>
+    <tr><td>Property tax (as booked)</td><td>$19,842</td><td>22.1%</td></tr>
+    <tr><td>Management &amp; cleaning</td><td>$16,565</td><td>18.4%</td></tr>
+    <tr><td>Insurance</td><td>$14,406</td><td>16.0%</td></tr>
+    <tr><td>Utilities</td><td>$13,686</td><td>15.2%</td></tr>
   </tbody>
 </table>
-<p class="note">Display rounded to nearest dollar; T12 totals from unrounded monthly values. February 2026 soft month ($1,031 NOI). April–June 2026 strongest.</p>
 
-<div class="page-break"></div>
-<p class="hdr">Buyer diligence · Page 2 of 2</p>
-<h2>T12 expense composition</h2>
-<table>
-  <thead><tr><th>Operating expenses</th><th>T12</th><th>% of OpEx</th></tr></thead>
-  <tbody>
-    <tr class="bold-top"><td>Property tax (accrual as booked)</td><td>$19,842</td><td>22.1%</td></tr>
-    <tr class="bold-top"><td>Management &amp; cleaning</td><td>$16,565</td><td>18.4%</td></tr>
-    <tr class="bold-top"><td>Insurance</td><td>$14,406</td><td>16.0%</td></tr>
-    <tr class="bold-top"><td>Utilities (electric/gas as booked)</td><td>$13,686</td><td>15.2%</td></tr>
-    <tr><td colspan="3" style="text-align:left;font-size:8pt;color:#5f4e3d;border:none;padding:0.15rem 0">Top four lines ≈72% of T12 operating expenses.</td></tr>
-    <tr><td>Operations software</td><td>$8,270</td><td>9.2%</td></tr>
-    <tr><td>Water / trash</td><td>$7,669</td><td>8.5%</td></tr>
-    <tr><td>Internet service</td><td>$3,018</td><td>3.4%</td></tr>
-    <tr><td>Cable TV</td><td>$2,280</td><td>2.5%</td></tr>
-    <tr><td>Job supplies</td><td>$2,023</td><td>2.3%</td></tr>
-    <tr><td>Security</td><td>$850</td><td>0.9%</td></tr>
-    <tr><td>Repairs &amp; maintenance</td><td>$1,060</td><td>1.2%</td></tr>
-    <tr><td>Advertising &amp; marketing</td><td>$178</td><td>0.2%</td></tr>
-    <tr><td>Laundry / office / other / pest</td><td>$0</td><td>0.0%</td></tr>
-    <tr class="total"><td>Total operating expenses</td><td>$89,847</td><td>100%</td></tr>
-  </tbody>
-</table>
-<p class="note">Property tax booked at $1,667/month: confirm Frio County bills (may be accrual). R&amp;M is low post-renovation; diligence whether true run-rate.</p>
+<p class="note"><strong>Diligence:</strong> Owner P&amp;L extract, not audited. July 2026 expense lines matched June in the prior export (verify July NOI). $3,429 &ldquo;other rental&rdquo; is unclassified in Hotel/Lease lines. Cash after debt and lender contacts are on the financing PDF. Full workbook after walkthrough or on request.</p>
 
-<div class="two">
-  <div class="box">
-    <strong>What this summary is not</strong><br>
-    Extract of owner P&amp;L, not the full workbook. Not audited, not QoE, not standardized hotel COA. Owner salary beyond Management &amp; Cleaning not broken out. Full workbook after walkthrough or on request.
-  </div>
-  <div class="box">
-    <strong>Cash after debt</strong><br>
-    This page is pre-debt NOI only. Monthly payment, cash left after P&amp;I, DSCR tables, and lender contacts are on the <strong>Financing &amp; DSCR</strong> PDF in this package. Seller financing is not offered.
-  </div>
-</div>
-
-<p class="footer">Hotel Dilley Grand · 110 S Main St, Dilley, TX 78017 · Ask $650,000 · Walkthrough in person or live video: reply or (737) 367-2371 · hoteldilley.com/buy · Owner is a Texas real estate license holder. Figures owner-provided; verify independently.</p>
+<p class="footer">110 Dilley LLC · Owner is a Texas real estate license holder · Figures owner-provided; verify independently · hoteldilley.com/buy · (737) 367-2371 · Full monthly grid in diligence workbook on request.</p>
 </body>
 </html>

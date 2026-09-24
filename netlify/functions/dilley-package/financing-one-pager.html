@@ -2,134 +2,200 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Hotel Dilley Grand Financing &amp; DSCR</title>
+<title>Hotel Dilley Grand Financing</title>
 <style>
-  @page { size: letter; margin: 0.45in 0.5in; }
+  @page { size: letter; margin: 0.55in 0.6in; }
   * { box-sizing: border-box; }
-  body { font-family: Georgia, "Times New Roman", serif; font-size: 9pt; color: #291c11; line-height: 1.35; margin: 0; }
-  .hdr { font-family: Helvetica, Arial, sans-serif; font-size: 7.5pt; letter-spacing: 0.18em; text-transform: uppercase; color: #8a7660; margin-bottom: 0.3rem; }
-  h1 { font-size: 15pt; margin: 0.15rem 0; }
-  .sub { font-size: 8.5pt; color: #5f4e3d; margin: 0.15rem 0; }
-  .hero-pills { display: flex; gap: 0.45rem; flex-wrap: wrap; margin: 0.45rem 0; }
-  .pill { border: 1px solid #c99a4b; padding: 0.3rem 0.5rem; font-family: Helvetica, Arial, sans-serif; font-size: 8pt; }
-  .pill strong { color: #b04a17; font-size: 10pt; display: block; }
-  .cash-box { border: 2px solid #b04a17; background: #fdfbf7; padding: 0.5rem 0.55rem; margin: 0.45rem 0; }
-  .cash-box h2 { font-size: 10pt; margin: 0 0 0.35rem; border: none; padding: 0; }
-  .cash-box ul { margin: 0; padding-left: 1.1rem; font-size: 8.5pt; }
-  .cash-box li { margin: 0.2rem 0; }
-  .two-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem; margin: 0.4rem 0; }
-  .card { border: 1px solid #d9cbb2; padding: 0.45rem; font-size: 8pt; background: #fdfbf7; }
-  .card h3 { font-family: Helvetica, Arial, sans-serif; font-size: 9pt; margin: 0 0 0.3rem; color: #b04a17; }
-  table { width: 100%; border-collapse: collapse; font-size: 7.5pt; margin: 0.3rem 0; }
-  th, td { border: 1px solid #d9cbb2; padding: 0.18rem 0.28rem; text-align: right; }
-  th:first-child, td:first-child { text-align: left; }
-  th { background: #f3ead9; font-weight: 600; }
-  h2 { font-size: 10pt; margin: 0.55rem 0 0.25rem; border-bottom: 1px solid #d9cbb2; padding-bottom: 0.1rem; }
-  p { margin: 0.3rem 0; font-size: 8pt; color: #5f4e3d; }
-  .page-break { page-break-before: always; }
-  .lender { border: 1px solid #d9cbb2; padding: 0.4rem; margin: 0.35rem 0; font-size: 8.5pt; background: #fdfbf7; }
-  .lender strong { font-family: Helvetica, Arial, sans-serif; color: #291c11; }
-  .footer { font-size: 7pt; color: #8a7660; margin-top: 0.55rem; border-top: 1px solid #d9cbb2; padding-top: 0.28rem; }
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 1.45;
+    color: #1a1a1a;
+    margin: 0;
+    background: #fff;
+  }
+  .hdr {
+    font-size: 8pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #14532d;
+    margin-bottom: 0.5rem;
+  }
+  h1 {
+    font-size: 20pt;
+    font-weight: 700;
+    color: #0F3D2E;
+    margin: 0 0 0.25rem;
+    letter-spacing: -0.02em;
+  }
+  .address {
+    font-size: 9pt;
+    color: #4a5568;
+    margin-bottom: 1.25rem;
+  }
+  .answers {
+    background: #E8F2EC;
+    border: 1px solid #A7C4B5;
+    border-radius: 6px;
+    padding: 1.1rem 1.25rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .answers .label {
+    font-size: 8.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #14532d;
+    margin-bottom: 0.15rem;
+  }
+  .answers .value {
+    font-size: 22pt;
+    font-weight: 700;
+    color: #0F3D2E;
+    line-height: 1.15;
+    margin-bottom: 0.85rem;
+  }
+  .answers .value:last-of-type { margin-bottom: 0; }
+  .answers .sub {
+    font-size: 9pt;
+    color: #4a5568;
+    margin-top: -0.5rem;
+    margin-bottom: 0.85rem;
+  }
+  h2 {
+    font-size: 11pt;
+    font-weight: 700;
+    color: #0F3D2E;
+    margin: 0 0 0.5rem;
+  }
+  table.compare {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10pt;
+    margin-bottom: 1.25rem;
+  }
+  table.compare th {
+    text-align: left;
+    padding: 0.55rem 0.65rem;
+    background: #0F3D2E;
+    color: #fff;
+    font-weight: 600;
+  }
+  table.compare th:not(:first-child) { text-align: center; }
+  table.compare td {
+    padding: 0.55rem 0.65rem;
+    border-bottom: 1px solid #A7C4B5;
+    text-align: center;
+  }
+  table.compare td:first-child {
+    text-align: left;
+    font-weight: 600;
+    color: #14532d;
+    background: #F7FAF8;
+  }
+  table.compare tr:last-child td { border-bottom: none; }
+  .footnote {
+    font-size: 8pt;
+    color: #4a5568;
+    margin: -0.75rem 0 1.25rem;
+    line-height: 1.4;
+  }
+  .lenders {
+    margin-top: 1rem;
+  }
+  .lenders ul {
+    margin: 0.35rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .lenders li {
+    padding: 0.45rem 0;
+    border-bottom: 1px solid #D1E7DD;
+    font-size: 9.5pt;
+  }
+  .lenders li:last-child { border-bottom: none; }
+  .lenders strong { color: #0F3D2E; }
+  .disclaimer {
+    font-size: 8pt;
+    color: #4a5568;
+    margin-top: 1.25rem;
+    line-height: 1.45;
+  }
+  .cta {
+    margin-top: 1rem;
+    font-size: 9.5pt;
+    color: #1a1a1a;
+  }
+  .cta strong { color: #0F3D2E; }
+  .noi-line {
+    font-size: 9pt;
+    color: #4a5568;
+    margin-bottom: 1rem;
+  }
 </style>
 </head>
 <body>
-<p class="hdr">Buyer diligence · September 24, 2026</p>
-<h1>Hotel Dilley Grand · Financing &amp; DSCR</h1>
-<p class="sub">110 S Main St, Dilley, TX 78017 · 20 units: 19 rooms + owner&rsquo;s residence · 110 Dilley LLC</p>
-<div class="hero-pills">
-  <div class="pill">Ask<br><strong>$650,000</strong></div>
-  <div class="pill">T12 NOI (Sep 2025–Aug 2026)<br><strong>$69,010</strong></div>
-  <div class="pill">Paths<br><strong>Two lender-quoted options</strong></div>
-  <div class="pill">Seller financing<br><strong>Not offered</strong></div>
-</div>
-<p>T12 NOI held constant at $69,010 for all illustrations below. See the T12 P&amp;L summary PDF for revenue, expenses, and monthly detail. Lender-quoted paths only: not a loan commitment, pre-approval, or guarantee. Subject to buyer credit, experience, underwriting, and a current appraisal.</p>
+<p class="hdr">Buyer package · September 24, 2026</p>
+<h1>Financing at a glance</h1>
+<p class="address">Hotel Dilley Grand · 110 S Main St, Dilley, TX 78017 · Ask $650,000</p>
+<p class="noi-line">Illustrations use T12 NOI <strong>$69,010</strong> (Sep 2025–Aug 2026). Full P&amp;L in the other PDF. Seller financing is <strong>not</strong> offered.</p>
 
-<div class="cash-box">
-  <h2>Cash flow after debt (T12 NOI held constant)</h2>
+<div class="answers">
+  <div class="label">1. How much down?</div>
+  <div class="value">$130,000</div>
+  <div class="sub">20% of $650,000 (SBA-style path). More equity: 30% = $195,000.</div>
+
+  <div class="label">2. Monthly payment?</div>
+  <div class="value">~$4,275 / mo</div>
+  <div class="sub">Principal &amp; interest, SBA-style 8.75% · 25-year amort · loan $520,000.</div>
+
+  <div class="label">3. Cash on top (after debt)?</div>
+  <div class="value">~$1,476 / mo</div>
+  <div class="sub">T12 NOI ÷ 12 minus monthly P&amp;I (pre-tax, pre-owner salary).</div>
+</div>
+
+<h2>Compare three paths</h2>
+<table class="compare">
+  <thead>
+    <tr>
+      <th></th>
+      <th>20% SBA-style</th>
+      <th>30% SBA-style</th>
+      <th>Conventional ~35%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Down payment</td>
+      <td>$130,000</td>
+      <td>$195,000</td>
+      <td>$227,500</td>
+    </tr>
+    <tr>
+      <td>Mo. payment</td>
+      <td>~$4,275</td>
+      <td>~$3,741</td>
+      <td>~$3,534</td>
+    </tr>
+    <tr>
+      <td>Cash after debt</td>
+      <td>~$1,476</td>
+      <td>~$2,010</td>
+      <td>~$2,217</td>
+    </tr>
+  </tbody>
+</table>
+<p class="footnote">Primary row uses 8.75% / 25-yr on SBA-style paths (DSCR 1.35 at 20%, 1.54 at 30%). Conventional column: 65% LTV, 8.00%, 20-yr amort (DSCR ~1.63). Lender-quoted, not a commitment; subject to credit, underwriting, and appraisal.</p>
+
+<div class="lenders">
+  <h2>Who to call</h2>
   <ul>
-    <li><strong>20% down ($130,000)</strong> · SBA-style 7(a) @ 8.75% · 25-year amort · loan $520,000 · ~<strong>$1,476/mo</strong> cash after P&amp;I · DSCR <strong>1.35</strong></li>
-    <li><strong>30% down ($195,000)</strong> · same rate/term · loan $455,000 · ~<strong>$2,010/mo</strong> cash after P&amp;I · DSCR <strong>1.54</strong></li>
-    <li><strong>Conventional ~35% down ($227,500)</strong> · 65% LTV · @ ~8.00% · 20-year amort · loan $422,500 · ~<strong>$2,217/mo</strong> cash after P&amp;I · DSCR <strong>~1.63</strong></li>
+    <li><strong>Hunter Mozingo</strong> · Peachtree Group (SBA) · 334-201-5421 · hmozingo@peachtreegroup.com</li>
+    <li><strong>Beau &ldquo;Bo&rdquo; Eckstein</strong> · Emerge Lending · 925-852-8261</li>
+    <li><strong>Herring Bank hospitality desk</strong> · 469-210-3289</li>
   </ul>
-  <p style="margin:0.35rem 0 0;font-size:7.5pt">Cash after debt = T12 NOI ÷ 12 minus monthly P&amp;I (pre-tax, pre-owner salary). Rounded for display.</p>
 </div>
 
-<div class="two-cards">
-  <div class="card">
-    <h3>Path 1 · SBA 7(a) profile</h3>
-    Down ~20–30% at $650k ($130k–$195k) · LTV ~70–80% · Rate band ~8.25–9.25% (≈prime+2 at quote) · 25-year amortization · Primary illustration @ 8.75%, DSCR 1.35 at 20% down.
-  </div>
-  <div class="card">
-    <h3>Path 2 · Conventional hotel desk</h3>
-    Down ~35–40% ($227.5k–$260k) · LTV 60–65%, sized off appraisal · Rate ~7.75–8.25% (prime+1 to 1.5) · 5-year term / 20-year amort · Primary illustration 65% LTV @ 8.00%, DSCR ~1.63.
-  </div>
-</div>
-
-<h2>Path 1 · SBA 7(a) · $650,000 ask · 25-year amort</h2>
-<p><strong>20% down · $130,000 · loan $520,000</strong></p>
-<table>
-  <thead><tr><th>Rate</th><th>Mo. P&amp;I</th><th>Cash after debt</th><th>DSCR</th></tr></thead>
-  <tbody>
-    <tr><td>8.25%</td><td>$4,100</td><td>~$1,651</td><td>1.40</td></tr>
-    <tr><td>8.75%</td><td>$4,275</td><td>~$1,476</td><td>1.35</td></tr>
-    <tr><td>9.25%</td><td>$4,453</td><td>~$1,298</td><td>1.29</td></tr>
-  </tbody>
-</table>
-<p><strong>30% down · $195,000 · loan $455,000</strong></p>
-<table>
-  <thead><tr><th>Rate</th><th>Mo. P&amp;I</th><th>Cash after debt</th><th>DSCR</th></tr></thead>
-  <tbody>
-    <tr><td>8.25%</td><td>$3,587</td><td>~$2,163</td><td>1.60</td></tr>
-    <tr><td>8.75%</td><td>$3,741</td><td>~$2,010</td><td>1.54</td></tr>
-    <tr><td>9.25%</td><td>$3,897</td><td>~$1,854</td><td>1.48</td></tr>
-  </tbody>
-</table>
-
-<h2>Path 2 · Conventional hotel desk · $650,000 ask · 20-year amort</h2>
-<p><strong>60% LTV · down $260,000 · loan $390,000</strong></p>
-<table>
-  <thead><tr><th>Rate</th><th>Mo. P&amp;I</th><th>Cash after debt</th><th>DSCR</th></tr></thead>
-  <tbody>
-    <tr><td>7.75%</td><td>$3,202</td><td>~$2,549</td><td>1.80</td></tr>
-    <tr><td>8.00%</td><td>$3,262</td><td>~$2,489</td><td>1.76</td></tr>
-    <tr><td>8.25%</td><td>$3,323</td><td>~$2,428</td><td>1.73</td></tr>
-  </tbody>
-</table>
-<p><strong>65% LTV · down $227,500 · loan $422,500</strong></p>
-<table>
-  <thead><tr><th>Rate</th><th>Mo. P&amp;I</th><th>Cash after debt</th><th>DSCR</th></tr></thead>
-  <tbody>
-    <tr><td>7.75%</td><td>$3,469</td><td>~$2,282</td><td>1.66</td></tr>
-    <tr><td>8.00%</td><td>$3,534</td><td>~$2,217</td><td>1.63</td></tr>
-    <tr><td>8.25%</td><td>$3,600</td><td>~$2,151</td><td>1.60</td></tr>
-  </tbody>
-</table>
-
-<p><strong>$600,000 sensitivity (SBA 20% down, 25-year amort, T12 NOI $69,010):</strong> @ 8.25% DSCR 1.52 · @ 8.75% DSCR 1.46 · @ 9.25% DSCR 1.40 (loan $480,000, down $120,000).</p>
-
-<div class="page-break"></div>
-<p class="hdr">Buyer diligence · Page 2 of 2</p>
-<h2>Talk to these contacts</h2>
-<p>Share this page and the T12 P&amp;L PDF with your lender. Names below have discussed Hotel Dilley or quoted hospitality terms; outreach is buyer-initiated.</p>
-
-<div class="lender">
-  <strong>Hunter Mozingo</strong> · Peachtree Group (SBA)<br>
-  334-201-5421 · hmozingo@peachtreegroup.com<br>
-  <span style="font-size:7.5pt;color:#5f4e3d">SBA PLP · hospitality focus · general equity and DSCR ranges per their program (subject to underwriting).</span>
-</div>
-<div class="lender">
-  <strong>Beau &ldquo;Bo&rdquo; Eckstein</strong> · Emerge Lending<br>
-  925-852-8261
-</div>
-<div class="lender">
-  <strong>Herring Bank hospitality desk</strong><br>
-  469-210-3289<br>
-  <span style="font-size:7.5pt;color:#5f4e3d">Conventional hotel-desk path · 60–65% LTV · prime+1–1.5 · 5/20 structure.</span>
-</div>
-
-<p><strong>Seller financing is not offered.</strong> Owner is redeploying to multifamily (portfolio decision, not distress).</p>
-<p><strong>Next step:</strong> Send this packet to your lender or reply to book a walkthrough (in person in Dilley or live video). Full P&amp;L workbook, renovation docs, and CO available after walkthrough or on request.</p>
-
-<p class="footer">Hotel Dilley Grand · Ask $650,000 · T12 NOI $69,010 · (737) 367-2371 · hoteldilley.com/buy · Figures owner-provided; verify independently. Financing descriptions are lender-quoted, subject to underwriting and appraisal, not guaranteed and not pre-approved. Seller financing is not offered.</p>
+<p class="cta"><strong>Next step:</strong> Send this page to your lender or book a walkthrough · (737) 367-2371 · hoteldilley.com/buy</p>
+<p class="disclaimer">Figures are owner-provided; verify independently. Financing descriptions are lender-quoted paths, not pre-approval or guarantee. Seller financing is not offered.</p>
 </body>
 </html>
